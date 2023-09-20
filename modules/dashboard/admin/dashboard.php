@@ -89,8 +89,7 @@ if ( isset( $_POST['ogtags_saving'] ) ) {
 		<aside class="ogtags-sidebar">
 			<div class="row">
 				<h2><?php _e( 'Siga no Twitter!', OG_TAGS_TEXTDOMAIN ); ?></h2>
-				<a href="https://twitter.com/mariovalney" class="twitter-follow-button" data-show-count="false" data-lang="pt" data-size="large">Siga no Twitter!</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				<a href="https://twitter.com/mariovalney" class="twitter-follow-button"><?php _e('Seguir @mariovalney', OG_TAGS_TEXTDOMAIN); ?></a>
 			</div>
 			<hr style="margin: 20px 0">
 			<?php
