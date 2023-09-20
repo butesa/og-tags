@@ -98,7 +98,7 @@ if ( isset( $_POST['ogtags_saving'] ) ) {
 				<h3><?php _e( 'Compatibilidade', OG_TAGS_TEXTDOMAIN ) ?></h3>
 				<div class="row">
 					<label><?php _e( 'Desativar título personalizado', OG_TAGS_TEXTDOMAIN ) ?>: </label>
-					<input type="checkbox" name="ogtags_update_debugfilter" value="1" <?php checked( '1', $ogtags_options['ogtags_debug_filter'] ); ?> > <span class="ogtags-descricao"><?php _e( 'Padrão: desmarcado' ) ?>.</span>
+					<input type="checkbox" name="ogtags_update_debugfilter" value="1" <?php checked( '1', $ogtags_options['ogtags_debug_filter'] ); ?> > <span class="ogtags-descricao"><?php _e( 'Padrão: desmarcado', OG_TAGS_TEXTDOMAIN ) ?>.</span>
 				</div>
 				
 				<h3><?php _e('Tags', OG_TAGS_TEXTDOMAIN) ?></h3>

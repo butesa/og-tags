@@ -168,7 +168,7 @@ if ( ! class_exists( 'OG_Tags_Front' ) ) {
 			if ( $options['ogtags_debug_filter'] ) {
 				$ogtitle = wp_title( '', false );
 			} else {
-				$ogtitle = wp_title( '|', false, 'right' ) . " " . $options['ogtags_nomedoblog'];
+				$ogtitle = wp_title( '|', false, 'right' ) . $options['ogtags_nomedoblog'];
 			}
 
 			// Descrioção e URL
