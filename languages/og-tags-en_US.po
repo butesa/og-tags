@@ -1,0 +1,256 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cf7-html-email-template-extension\n"
+"POT-Creation-Date: 2016-08-18 23:51-0300\n"
+"PO-Revision-Date: 2023-09-20 09:48+0000\n"
+"Last-Translator: Johannes Matschke\n"
+"Language-Team: English (United States)\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;esc_attr_e\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"Report-Msgid-Bugs-To: \n"
+"X-Loco-Version: 2.6.6; wp-6.3.1\n"
+"X-Loco-Template: languages/og-tags.po\n"
+"X-Loco-Template-Mode: PO"
+
+#: modules/dashboard/admin/dashboard.php:61
+msgid "(deve ter pelo menos 200x200)"
+msgstr "(must be at least 200x200)"
+
+msgid "(recomenda-se 1200 x 630)"
+msgstr "(1200 x 630 recommended)"
+
+msgid "(separados com um espaço)"
+msgstr "(separated by spaces)"
+
+#: modules/dashboard/admin/dashboard.php:107
+msgid ""
+"A Open Graph também permite relacionarmos os artigos à uma página do "
+"Facebook e é o link dessa página que devemos inserir na seção \"Dados dos "
+"Autores\", além do"
+msgstr ""
+"Open Graph also allows us to link articles to a Facebook page. It is the "
+"link to this page that we must insert in the \"Author data\" section, in "
+"addition to the blog's"
+
+msgid "A plugin for optimization of Open Graph Tags for WordPress sites."
+msgstr "A plugin for optimization of Open Graph Tags for WordPress sites."
+
+#: modules/dashboard/admin/dashboard.php:117
+msgid ""
+"Alguns temas ou plugins podem alterar a forma que o WordPress lê o título de "
+"suas páginas. Você deve marcar essa opção caso isso gere algum problema na "
+"forma como o Facebook lê o título das suas páginas. O padrão é desmarcado."
+msgstr ""
+"Some themes or plugins can change the way WordPress reads the title of your "
+"pages. You should check this option if it causes any problems with the way "
+"Facebook reads the title of your pages. The default is unchecked."
+
+#: modules/dashboard/admin/dashboard.php:76
+#: modules/dashboard/admin/dashboard.php:116
+msgid "Compatibilidade"
+msgstr "Compatibility"
+
+#: modules/dashboard/admin/dashboard.php:102
+msgid "Configurações"
+msgstr "Settings"
+
+#: modules/dashboard/class-og-tags-dashboard.php:76
+#: modules/dashboard/class-og-tags-dashboard.php:94
+msgid "Core was not passed in \"OG_Tags_Dashboard\"."
+msgstr "Core was not passed in \"OG_Tags_Dashboard\"."
+
+#: modules/front/class-og-tags-front.php:84
+#: modules/front/class-og-tags-front.php:102
+msgid "Core was not passed in \"OG_Tags_Front\"."
+msgstr "Core was not passed in \"OG_Tags_Front\"."
+
+#: modules/dashboard/admin/dashboard.php:39
+msgid "Dados do Site"
+msgstr "Website data"
+
+#: modules/dashboard/admin/dashboard.php:67
+msgid "Dados dos Autores"
+msgstr "Author data"
+
+#: modules/dashboard/admin/dashboard.php:78
+#: modules/dashboard/admin/dashboard.php:117
+msgid "Desativar título personalizado"
+msgstr "No custom titles"
+
+#: modules/dashboard/admin/dashboard.php:51
+msgid "Descrição do site:"
+msgstr "Website description:"
+
+#: modules/dashboard/admin/dashboard.php:107
+msgid ""
+"do blog, para que seja possível a moderação e administração dos plugins "
+"sociais do Facebook, caso você use algum, por exemplo o"
+msgstr ""
+"so that the Facebook social plugins can be moderated and administered, if "
+"you use any, for example the"
+
+#: modules/dashboard/admin/dashboard.php:103
+msgid ""
+"do seu site, que você já configurou, quando estava instalando o WordPress!"
+msgstr ""
+"of your site, which you already set up when you were installing WordPress!"
+
+#: modules/dashboard/admin/dashboard.php:98
+msgid "Documentação"
+msgstr "Documentation"
+
+#: modules/dashboard/admin/dashboard.php:122
+msgid "Dúvidas? Sugestões? Envie um e-mail para"
+msgstr "Questions? Suggestions? Send an e-mail to"
+
+#: modules/dashboard/class-og-tags-dashboard.php:126
+#: modules/dashboard/admin/dashboard.php:63
+msgid "Escolha a Imagem"
+msgstr "Choose an image"
+
+#: modules/dashboard/admin/dashboard.php:122
+msgid "Fork no GitHub"
+msgstr "Fork on GitHub"
+
+#: modules/dashboard/admin/dashboard.php:107
+msgid "ID do perfil dos administradores"
+msgstr "Admin profile IDs"
+
+msgid "ID dos Administradores"
+msgstr "Admin IDs"
+
+#: modules/dashboard/admin/dashboard.php:72
+msgid "ID dos Administradores (separados com um espaço)"
+msgstr "Admin IDs (separated by spaces)"
+
+#: modules/dashboard/admin/dashboard.php:58
+msgid "Imagem Padrão"
+msgstr "Default image"
+
+#: modules/dashboard/admin/dashboard.php:70
+msgid "Link da Página no Facebook"
+msgstr "Link to Facebook page"
+
+#: modules/dashboard/admin/dashboard.php:104
+msgid ""
+"Mas, se por algum motivo ou estratégia de divulgação, você quiser alterar "
+"esse conteúdo, o plugin deixa livre para você escolher um"
+msgstr ""
+"But if, for some reason or as part of your promotion strategy, you want to "
+"change this content, the plugin leaves it free for you to choose your own"
+
+#: modules/dashboard/admin/dashboard.php:106
+msgid ""
+"Na seção Imagem Padrão, você pode incluir a URL de uma imagem a ser usada "
+"tanto para a Home do seu site, quanto nos casos em que o artigo não tem uma "
+"Imagem Destacada."
+msgstr ""
+"In the default image section, you can enter the URL of an image to be used "
+"both for the front page of your website and in cases where the article has "
+"no featured image."
+
+#: modules/dashboard/admin/dashboard.php:44
+msgid "Nome do site:"
+msgstr "Website name:"
+
+#: modules/dashboard/admin/dashboard.php:103
+#: modules/dashboard/admin/dashboard.php:104
+msgid "nome e descrição"
+msgstr "name and description"
+
+#: modules/dashboard/admin/dashboard.php:103
+msgid "O plugin reconhece o"
+msgstr "The plugin recognizes the"
+
+#: modules/dashboard/class-og-tags-dashboard.php:107
+msgid "OG Tags"
+msgstr "OG Tags"
+
+#: modules/dashboard/admin/dashboard.php:122
+msgid "ou faça um"
+msgstr "or create a"
+
+#: modules/dashboard/admin/dashboard.php:79
+msgid "Padrão: desmarcado"
+msgstr "Default: unchecked"
+
+#: modules/dashboard/admin/dashboard.php:105
+msgid "Para isso, basta preencher os campos acima, na seção \"Dados do Site\"."
+msgstr ""
+"To do this, simply fill in the fields above in the \"Website data\" section."
+
+#: modules/dashboard/admin/dashboard.php:121
+msgid "Para saber mais sobre a API Open Graph"
+msgstr "To find out more about the Open Graph API"
+
+#: modules/dashboard/admin/dashboard.php:104
+msgid ""
+"próprios para serem incluidos nas OG Tags e consequentemente serem vistos no "
+"Facebook."
+msgstr "to be included in the OG Tags and consequently be seen on Facebook."
+
+#: modules/dashboard/admin/dashboard.php:83
+msgid "Salvar Alterações"
+msgstr "Save changes"
+
+msgid "Seguir @mariovalney"
+msgstr "Follow @mariovalney"
+
+#: modules/dashboard/admin/dashboard.php:90
+msgid "Siga no Twitter!"
+msgstr "Follow us on Twitter!"
+
+#: modules/dashboard/admin/dashboard.php:107
+msgid "sistema de comentários"
+msgstr "comments system"
+
+msgid "Tags"
+msgstr "Tags"
+
+#: og-tags.php:310
+msgid "The OG_Tags was overwritten..."
+msgstr "The OG_Tags was overwritten..."
+
+#: modules/dashboard/admin/dashboard.php:112
+msgid ""
+"Uma página com essas tags bem estruturadas, gera uma história interessante a "
+"cada vez que é curtida/publicada. É como se cada um que curtisse divulgasse "
+"tão bem quanto o próprio autor, que escolhe uma imagem chamativa, bem como "
+"uma descrição e título atraentes e que têm a ver com a página em si."
+msgstr ""
+"A page with these well-structured tags generates an interesting story every "
+"time it is liked/published. It's as if each person who likes it spreads the "
+"word as well as the author themselves, who chooses an eye-catching image, as "
+"well as an attractive description and title that have to do with the page "
+"itself."
+
+#: modules/dashboard/admin/dashboard.php:61
+msgid "URL da imagem"
+msgstr "Image URL"
+
+msgid "Use this tags"
+msgstr "Use this tags"
+
+#: modules/dashboard/admin/dashboard.php:111
+msgid "Utilidade"
+msgstr "Benefit"
+
+#: modules/dashboard/admin/dashboard.php:121
+msgid "visite nosso site"
+msgstr "visit our website"
+
+#: modules/dashboard/admin/dashboard.php:35
+msgid "Área de Administração"
+msgstr "Administration area"
+
+#: modules/dashboard/admin/dashboard.php:99
+msgid "é um plugin voltado para otimizar o seu site no Facebook!"
+msgstr "is a plugin for optimizing your site on Facebook!"

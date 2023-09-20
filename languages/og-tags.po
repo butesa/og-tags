@@ -209,3 +209,24 @@ msgstr ""
 #: modules/front/class-og-tags-front.php:102
 msgid "Core was not passed in \"OG_Tags_Front\"."
 msgstr ""
+
+msgid "A plugin for optimization of Open Graph Tags for WordPress sites."
+msgstr ""
+
+msgid "ID dos Administradores"
+msgstr ""
+
+msgid "(separados com um espaço)"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "Use this tags"
+msgstr ""
+
+msgid "(recomenda-se 1200 x 630)"
+msgstr ""
+
+msgid "Seguir @mariovalney"
+msgstr ""
