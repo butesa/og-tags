@@ -111,16 +111,30 @@ if ( ! class_exists( 'OG_Tags_Front' ) ) {
 		 * @since    2.0.0
 		 */
 		public function insert_tags() {
+		$meta_tags= array();
 
 			// Tags comuns
-			$this->insert_commons_tags();
+			$this->insert_commons_tags($meta_tags);
 
 			if ( is_single() ) {
-				$this->insert_post_tags();				
+				$this->insert_post_tags($meta_tags);				
 			} else {
-				$this->insert_site_tags();
+				$this->insert_site_tags($meta_tags);
 			}
 
+			$meta_tags_filtered = array();
+			foreach ($meta_tags as $name => $value) {
+				if (!empty($value) && !empty($this->options['ogtags_tag'][$name])) {
+					$meta_tags_filtered[$name] = $value;
+				}
+			}
+
+			$meta_tags_filtered = apply_filters('og-tags-values', $meta_tags_filtered);
+
+			echo '<!-- OG TAGS -->' . "\n";
+			foreach ($meta_tags_filtered as $name => $value) {
+				echo '<meta property="' . esc_attr($name) . '" content="' . esc_attr($value) . '">' . "\n";
+			}
 		}
 
 		/**
@@ -128,16 +142,15 @@ if ( ! class_exists( 'OG_Tags_Front' ) ) {
 		 *
 		 * @since    2.0.0
 		 */
-		private function insert_commons_tags() {
+		private function insert_commons_tags(&$meta_tags) {
 
 			$options = $this->get_options();
 
-            echo '<!-- OG TAGS -->' . "\n";
-			echo '<meta property="og:site_name" content="' . $options['ogtags_nomedoblog'] . '">' . "\n";
+			$meta_tags['og:site_name'] = $options['ogtags_nomedoblog'];
 
 			$fbadmins = explode( " ", $options['ogtags_fbadmins'] );
 			foreach ( $fbadmins as $admin ) {
-				echo '<meta property="fb:admins" content="' . $admin . '">' . "\n";	
+				$meta_tags['fb:admins'] = $admin;
 			}
 
 		}
@@ -147,7 +160,7 @@ if ( ! class_exists( 'OG_Tags_Front' ) ) {
 		 *
 		 * @since    2.0.0
 		 */
-		private function insert_post_tags() {
+		private function insert_post_tags(&$meta_tags) {
 
 			$options = $this->get_options();
 
@@ -185,16 +198,16 @@ if ( ! class_exists( 'OG_Tags_Front' ) ) {
 			
 			foreach ( $tags as $tag ) {
 				$articletag = $tag->name;
-				echo '<meta property="article:tag" content="' . $articletag . '">' . "\n"; 
+				$meta_tags['article:tag'] = $articletag;
 			}
 
-			echo '<meta property="og:title" content="' . esc_attr( $ogtitle ) . '">' . "\n";
-			echo '<meta property="og:description" content="' . esc_attr( $ogdescription ) . '">' . "\n";
-			echo '<meta property="og:url" content="' . esc_attr( $ogurl ) . '">' . "\n";
-			echo '<meta property="og:type" content="article">' . "\n";
-			echo '<meta property="og:image" content="' . esc_attr( $ogimage ) . '">' . "\n";
-			echo '<meta property="article:section" content="' . esc_attr( $articlesection ) . '">' . "\n";
-			echo '<meta property="article:publisher" content="' . esc_attr( $options['ogtags_publisher'] ) . '">' . "\n";
+			$meta_tags['og:title'] = $ogtitle;
+			$meta_tags['og:description'] = $ogdescription;
+			$meta_tags['og:url'] = $ogurl;
+			$meta_tags['og:type'] = 'article';
+			$meta_tags['og:image'] = $ogimage;
+			$meta_tags['article:section'] = $articlesection;
+			$meta_tags['article:publisher'] = $options['ogtags_publisher'];
 
 		}
 
@@ -203,7 +216,7 @@ if ( ! class_exists( 'OG_Tags_Front' ) ) {
 		 *
 		 * @since    2.0.0
 		 */
-		private function insert_site_tags() {
+		private function insert_site_tags(&$meta_tags) {
 
 			$options = $this->get_options();
 
@@ -216,11 +229,11 @@ if ( ! class_exists( 'OG_Tags_Front' ) ) {
 
 			$ogurl = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-			echo '<meta property="og:title" content="' . esc_attr( $ogtitle ) . '">' . "\n";
-			echo '<meta property="og:description" content="' . esc_attr( $options['ogtags_descricaodoblog'] ) . '">' . "\n";
-			echo '<meta property="og:url" content="' . esc_attr( $ogurl ) . '">' . "\n";
-			echo '<meta property="og:type" content="website"> ' . "\n";
-			echo '<meta property="og:image" content="' . esc_attr( $options['ogtags_image_default'] ) . '">' . "\n";
+			$meta_tags['og:title'] = $ogtitle;
+			$meta_tags['og:description'] = $options['ogtags_descricaodoblog'];
+			$meta_tags['og:url'] = $ogurl;
+			$meta_tags['og:type'] = 'website';
+			$meta_tags['og:image'] = $options['ogtags_image_default'];
 
 		}
 

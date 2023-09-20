@@ -5,6 +5,18 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 $ogtags_options = get_option( 'ogtags_options' );
 
+$tag_types = array(
+	'og:site_name',
+	'og:title',
+	'og:description',
+	'og:url',
+	'og:type',
+	'og:image',
+	'article:section',
+	'article:tag',
+	'article:publisher',
+	'fb:admins'
+);
 // Recebendo os dados após salvar
 if ( isset( $_POST['ogtags_saving'] ) ) {
     check_admin_referer( 'og-tags-dashboard' );
@@ -15,6 +27,14 @@ if ( isset( $_POST['ogtags_saving'] ) ) {
 	$ogtags_update_sitename 		= ( isset( $_POST['ogtags_update_sitename'] ) ) 		? $_POST['ogtags_update_sitename'] 			: $ogtags_options['ogtags_nomedoblog'];
 	$ogtags_update_sitedescriotion	= ( isset( $_POST['ogtags_update_sitedescription'] ) ) 	? $_POST['ogtags_update_sitedescription'] 	: $ogtags_options['ogtags_descricaodoblog'];
 	$ogtags_update_debugfilter 		= ( isset( $_POST['ogtags_update_debugfilter'] ) ) 		? $_POST['ogtags_update_debugfilter'] 		: '0';
+	foreach ($tag_types as $t) {
+		$ogtags_update_tag[$t] = ( isset($_POST['ogtags_update_tag'][$t]) ) ? $_POST['ogtags_update_tag'][$t] : '0';
+}	
+
+	$ogtags_tags = array();
+	foreach ($tag_types as $t) {
+		$ogtags_tags[$t] = sanitize_text_field($ogtags_update_tag[$t]);
+	}
 
 	$ogtags_options = array(
 		'ogtags_fbadmins' 			=> sanitize_text_field( $ogtags_update_fbdmins ),
@@ -23,6 +43,7 @@ if ( isset( $_POST['ogtags_saving'] ) ) {
 		'ogtags_nomedoblog' 		=> sanitize_text_field( $ogtags_update_sitename ),
 		'ogtags_descricaodoblog' 	=> sanitize_text_field( $ogtags_update_sitedescriotion ),
 		'ogtags_debug_filter' 		=> sanitize_text_field( $ogtags_update_debugfilter ),
+		'ogtags_tag' => $ogtags_tags
 	);
 
 	update_option( 'ogtags_options', $ogtags_options );
@@ -78,6 +99,16 @@ if ( isset( $_POST['ogtags_saving'] ) ) {
 				<div class="row">
 					<label><?php _e( 'Desativar título personalizado', OG_TAGS_TEXTDOMAIN ) ?>: </label>
 					<input type="checkbox" name="ogtags_update_debugfilter" value="1" <?php checked( '1', $ogtags_options['ogtags_debug_filter'] ); ?> > <span class="ogtags-descricao"><?php _e( 'Padrão: desmarcado' ) ?>.</span>
+				</div>
+				
+				<h3><?php _e('Tags', OG_TAGS_TEXTDOMAIN) ?></h3>
+				<div class="row">
+					<label><?php _e('Use this tags', OG_TAGS_TEXTDOMAIN) ?>: </label>
+					<div style="display: inline-block;vertical-align: top;">
+					<?php foreach ($tag_types as $t) { ?>
+						<input type = "checkbox" name = "ogtags_update_tag[<?php echo $t; ?>]" value = "1" <?php checked( '1', $ogtags_options['ogtags_tag'][$t] ); ?> > <span class="ogtags-descricao"><?php _e( $t, OG_TAGS_TEXTDOMAIN ) ?></span><br>
+					<?php } ?>
+					</div>
 				</div>
 				
 				<div class="row">

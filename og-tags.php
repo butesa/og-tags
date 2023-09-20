@@ -273,6 +273,18 @@ if ( ! class_exists( 'OG_Tags' ) ) {
 				'ogtags_nomedoblog' 		=> get_bloginfo( 'name' ),
 				'ogtags_descricaodoblog'	=> get_bloginfo( 'description' ),
 				'ogtags_debug_filter' 		=> '0',
+				'ogtags_tags' => array(
+					'og:site_name' => '1',
+					'og:title' => '1',
+					'og:description' => '1',
+					'og:url' => '1',
+					'og:type' => '1',
+					'og:image' => '1',
+					'article:section' => '1',
+					'article:tag' => '1',
+					'article:publisher' => '1',
+					'fb:admins' => '1'
+				)
 			);
 
 			add_option( 'ogtags_options', $ogtags_options );
