@@ -124,7 +124,7 @@ if ( ! class_exists( 'OG_Tags_Front' ) ) {
 
 			$meta_tags_filtered = array();
 			foreach ($meta_tags as $name => $value) {
-				if (!empty($value) && !empty($this->options['ogtags_tag'][$name])) {
+				if (!empty($value) && !empty($this->options['ogtags_tags'][$name])) {
 					$meta_tags_filtered[$name] = $value;
 				}
 			}

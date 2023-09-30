@@ -43,7 +43,7 @@ if ( isset( $_POST['ogtags_saving'] ) ) {
 		'ogtags_nomedoblog' 		=> sanitize_text_field( $ogtags_update_sitename ),
 		'ogtags_descricaodoblog' 	=> sanitize_text_field( $ogtags_update_sitedescriotion ),
 		'ogtags_debug_filter' 		=> sanitize_text_field( $ogtags_update_debugfilter ),
-		'ogtags_tag' => $ogtags_tags
+		'ogtags_tags' => $ogtags_tags
 	);
 
 	update_option( 'ogtags_options', $ogtags_options );
@@ -65,14 +65,14 @@ if ( isset( $_POST['ogtags_saving'] ) ) {
 						<label>
 							<?php _e( 'Nome do site:', OG_TAGS_TEXTDOMAIN ) ?>
 						</label>
-						<input required type="text" class="nome" name="ogtags_update_sitename" value="<?php echo $ogtags_options['ogtags_nomedoblog']; ?>" form="ogtagssettings">
+						<input type="text" class="nome" name="ogtags_update_sitename" value="<?php echo $ogtags_options['ogtags_nomedoblog']; ?>" form="ogtagssettings">
 					</div>
 				
 					<div class="input-row">
 						<label>
 							<?php _e( 'Descrição do site:', OG_TAGS_TEXTDOMAIN ) ?>
 						</label>
-						<input required type="text" class="descricao" name="ogtags_update_sitedescription" value="<?php echo $ogtags_options['ogtags_descricaodoblog']; ?>" form="ogtagssettings">
+						<input type="text" class="descricao" name="ogtags_update_sitedescription" value="<?php echo $ogtags_options['ogtags_descricaodoblog']; ?>" form="ogtagssettings">
 					</div>
 				</div>
 
@@ -81,7 +81,7 @@ if ( isset( $_POST['ogtags_saving'] ) ) {
 				</h3>
 				<div class="row">
 					<label><?php _e( 'URL da imagem', OG_TAGS_TEXTDOMAIN ) ?><br><?php _e( '(recomenda-se 1200 x 630)', OG_TAGS_TEXTDOMAIN ) ?>:</label>
-					<input required id="upload_image_url" class="imagem" type="text" name="ogtags_update_image_default" value="<?php echo $ogtags_options['ogtags_image_default']; ?>" form="ogtagssettings">
+					<input id="upload_image_url" class="imagem" type="text" name="ogtags_update_image_default" value="<?php echo $ogtags_options['ogtags_image_default']; ?>" form="ogtagssettings">
 					<input id="ogtags-upload-btn" class="button" type="button" value="<?php _e( 'Escolha a Imagem', OG_TAGS_TEXTDOMAIN ) ?>"  form="ogtagssettings">
 				</div>
 
@@ -106,7 +106,7 @@ if ( isset( $_POST['ogtags_saving'] ) ) {
 					<label><?php _e('Use this tags', OG_TAGS_TEXTDOMAIN) ?>: </label>
 					<div style="display: inline-block;vertical-align: top;">
 					<?php foreach ($tag_types as $t) { ?>
-						<input type = "checkbox" name = "ogtags_update_tag[<?php echo $t; ?>]" value = "1" <?php checked( '1', $ogtags_options['ogtags_tag'][$t] ); ?> > <span class="ogtags-descricao"><?php _e( $t, OG_TAGS_TEXTDOMAIN ) ?></span><br>
+						<input type = "checkbox" name = "ogtags_update_tag[<?php echo $t; ?>]" value = "1" <?php checked( '1', $ogtags_options['ogtags_tags'][$t] ); ?> > <span class="ogtags-descricao"><?php _e( $t, OG_TAGS_TEXTDOMAIN ) ?></span><br>
 					<?php } ?>
 					</div>
 				</div>
