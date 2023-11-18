@@ -27,6 +27,7 @@ if ( isset( $_POST['ogtags_saving'] ) ) {
 	$ogtags_update_sitename 		= ( isset( $_POST['ogtags_update_sitename'] ) ) 		? $_POST['ogtags_update_sitename'] 			: $ogtags_options['ogtags_nomedoblog'];
 	$ogtags_update_sitedescriotion	= ( isset( $_POST['ogtags_update_sitedescription'] ) ) 	? $_POST['ogtags_update_sitedescription'] 	: $ogtags_options['ogtags_descricaodoblog'];
 	$ogtags_update_debugfilter 		= ( isset( $_POST['ogtags_update_debugfilter'] ) ) 		? $_POST['ogtags_update_debugfilter'] 		: '0';
+	$ogtags_update_compatexcerpt = ( isset($_POST['ogtags_update_compatexcerpt']) ) ? $_POST['ogtags_update_compatexcerpt'] : '0';
 	foreach ($tag_types as $t) {
 		$ogtags_update_tag[$t] = ( isset($_POST['ogtags_update_tag'][$t]) ) ? $_POST['ogtags_update_tag'][$t] : '0';
 }	
@@ -43,6 +44,7 @@ if ( isset( $_POST['ogtags_saving'] ) ) {
 		'ogtags_nomedoblog' 		=> sanitize_text_field( $ogtags_update_sitename ),
 		'ogtags_descricaodoblog' 	=> sanitize_text_field( $ogtags_update_sitedescriotion ),
 		'ogtags_debug_filter' 		=> sanitize_text_field( $ogtags_update_debugfilter ),
+		'ogtags_compat_excerpt' => sanitize_text_field($ogtags_update_compatexcerpt),
 		'ogtags_tags' => $ogtags_tags
 	);
 
@@ -98,7 +100,9 @@ if ( isset( $_POST['ogtags_saving'] ) ) {
 				<h3><?php _e( 'Compatibilidade', OG_TAGS_TEXTDOMAIN ) ?></h3>
 				<div class="row">
 					<label><?php _e( 'Desativar título personalizado', OG_TAGS_TEXTDOMAIN ) ?>: </label>
-					<input type="checkbox" name="ogtags_update_debugfilter" value="1" <?php checked( '1', $ogtags_options['ogtags_debug_filter'] ); ?> > <span class="ogtags-descricao"><?php _e( 'Padrão: desmarcado', OG_TAGS_TEXTDOMAIN ) ?>.</span>
+					<input type="checkbox" name="ogtags_update_debugfilter" value="1" <?php checked( '1', $ogtags_options['ogtags_debug_filter'] ); ?> > <span class="ogtags-descricao"><?php _e( 'Padrão: desmarcado', OG_TAGS_TEXTDOMAIN ) ?>.</span><br>
+					<label><?php _e('Alternate excerpt mode', OG_TAGS_TEXTDOMAIN) ?>: </label>
+					<input type="checkbox" name="ogtags_update_compatexcerpt" value="1" <?php checked('1', $ogtags_options['ogtags_compat_excerpt']); ?> > <span class="ogtags-descricao"><?php echo __('Use wp_trim_excerpt() instead of get_the_excerpt().', OG_TAGS_TEXTDOMAIN) . ' ' . __('Padrão: desmarcado', OG_TAGS_TEXTDOMAIN) ?>.</span>
 				</div>
 				
 				<h3><?php _e('Tags', OG_TAGS_TEXTDOMAIN) ?></h3>
@@ -173,6 +177,7 @@ if ( isset( $_POST['ogtags_saving'] ) ) {
 		<div class="row">
 			<h3><?php _e( 'Compatibilidade', OG_TAGS_TEXTDOMAIN ) ?></h3>
 			<p><strong><?php _e( 'Desativar título personalizado', OG_TAGS_TEXTDOMAIN ) ?>:</strong> <?php _e( 'Alguns temas ou plugins podem alterar a forma que o WordPress lê o título de suas páginas. Você deve marcar essa opção caso isso gere algum problema na forma como o Facebook lê o título das suas páginas. O padrão é desmarcado.', OG_TAGS_TEXTDOMAIN ) ?></p>
+			<p><strong><?php _e('Alternate excerpt mode', OG_TAGS_TEXTDOMAIN) ?>:</strong> <?php _e('Some themes or plugins can change the way WordPress creates the excerpt of your posts. You should check this option if you see problems like HTML tags in your excerpt. The default is unchecked.', OG_TAGS_TEXTDOMAIN) ?></p>
 		</div>
 		
 		<div class="row">

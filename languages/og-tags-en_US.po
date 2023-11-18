@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cf7-html-email-template-extension\n"
 "POT-Creation-Date: 2016-08-18 23:51-0300\n"
-"PO-Revision-Date: 2023-09-20 09:48+0000\n"
+"PO-Revision-Date: 2023-11-18 17:50+0000\n"
 "Last-Translator: Johannes Matschke\n"
 "Language-Team: English (United States)\n"
 "Language: en_US\n"
@@ -52,6 +52,9 @@ msgstr ""
 "Some themes or plugins can change the way WordPress reads the title of your "
 "pages. You should check this option if it causes any problems with the way "
 "Facebook reads the title of your pages. The default is unchecked."
+
+msgid "Alternate excerpt mode"
+msgstr "Alternate excerpt mode"
 
 #: modules/dashboard/admin/dashboard.php:76
 #: modules/dashboard/admin/dashboard.php:116
@@ -212,6 +215,15 @@ msgstr "Follow us on Twitter!"
 msgid "sistema de comentários"
 msgstr "comments system"
 
+msgid ""
+"Some themes or plugins can change the way WordPress creates the excerpt of "
+"your posts. You should check this option if you see problems like HTML tags "
+"in your excerpt. The default is unchecked."
+msgstr ""
+"Some themes or plugins can change the way WordPress creates the excerpt of "
+"your posts. You should check this option if you see problems like HTML tags "
+"in your excerpt. The default is unchecked."
+
 msgid "Tags"
 msgstr "Tags"
 
@@ -238,6 +250,9 @@ msgstr "Image URL"
 
 msgid "Use this tags"
 msgstr "Use this tags"
+
+msgid "Use wp_trim_excerpt() instead of get_the_excerpt()."
+msgstr "Use wp_trim_excerpt() instead of get_the_excerpt()."
 
 #: modules/dashboard/admin/dashboard.php:111
 msgid "Utilidade"

@@ -230,3 +230,12 @@ msgstr ""
 
 msgid "Seguir @mariovalney"
 msgstr ""
+
+msgid "Alternate excerpt mode"
+msgstr ""
+
+msgid "Use wp_trim_excerpt() instead of get_the_excerpt()."
+msgstr ""
+
+msgid "Some themes or plugins can change the way WordPress creates the excerpt of your posts. You should check this option if you see problems like HTML tags in your excerpt. The default is unchecked."
+msgstr ""

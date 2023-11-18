@@ -171,8 +171,24 @@ if ( ! class_exists( 'OG_Tags_Front' ) ) {
 				$ogtitle = wp_title( '|', false, 'right' ) . $options['ogtags_nomedoblog'];
 			}
 
-			// Descrioção e URL
-			$ogdescription = get_the_excerpt(); 
+			// Descrioção
+			if ($options['ogtags_compat_excerpt']) {
+				$post = get_post();
+
+				if (empty($post)) {
+					$ogdescription = '';
+				}
+				elseif (post_password_required($post)) {
+					$ogdescription = __( 'There is no excerpt because this is a protected post.' );
+				}
+				else {
+					$ogdescription = wp_trim_excerpt($post->post_excerpt, $post);
+				}
+			} else {
+				$ogdescription = get_the_excerpt(); 
+			}
+
+			// URL
 			$ogurl = get_permalink();
 
 			// Imagem
